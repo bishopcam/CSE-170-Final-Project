@@ -1,0 +1,13 @@
+ressources in
+~/folien/carRoadSketches/
+=> roadSegment<n>lanes[With|Without].png
+
+The js scenario scripts load
+  road<n>lanesCropWith.png and 
+  road<n>lanesCropWithout.png
+
+For some reason, the  roadSegment* in the ressources are a bit darker,
+=> must use gimp with
+  Image - Mode - Indexed
+  Colors - Brightness and Contrast - 30%
+

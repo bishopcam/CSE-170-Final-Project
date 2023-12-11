@@ -1,0 +1,67 @@
+(2023-11)
+(github issue)
+Adding new models is a good idea! I implemented your model in models.js and you can test it by setting testNewModel=true in control_gui.js. Since your CACC model presently is just the IDM, I set v0=3 m/s in the truck version to see any effects.
+Of course you are not done just by implementing the new model. You also need the gui and the simulation tell to use it. To do this, just look at all code pieces where testNewModel is used.
+
+In fact, this is the first step of a user-controlled possibility to change models. For this, a multi-valued version of testNewModel could be made accessible to the user, e.g., by a choicebox (select) html element
+
+
+(2023-04)
+add some example implementations to REAME.md, e.g., how to put a new vehicle/obstacle on a road (github Issue #22)
+
+(2023-04)
+add the new info/implementations to README.md:
+"Variable driving characteristics are now implemented. At construction time of the vehicles, a random "agility variable" is set influencing desire speed and desired acceleration in a persistent way throughout all situations and driving conditions or user-controlled global behaviour changes. All stochasticity (whether persistent to the driver or the random acceleration part) are removed for all purposes except longitudinal acceleration (lane changing, merging, crossing etc)"
+
+answer this american guy by email
+
+=========================================================
+
+(2023-04) all scenarious including deviation work perfectly, but
+(i) DONE roundabout: implementation of traffic rules does not work (same for ring and arm priority (do it quickly, because concerns MOBIL references; I am into it)
+veh ID 228 at itime=483 t=40.25 drives into main although gap<0
+"all previous actions drove ..."
+
+
+(ii) intersection: at left turn (sometimes straigt on) some vehicle blips
+ while crashes seem to work with general improvement (only a few...)
+
+(iii) get rid of info via jquery. Post them directly within js, template: routingGameInfo.js
+
+=========================================================
+
+(2022-04) General: all "!!!" or "!!!!" are TODOs
+
+(2022-04)
+//!!!! showInfo change to showInfoString() plus strings defined inline or as extra .js scripts to be included: works also locally. See golfCourse.js. Also the command "showInfoString should be placed in control_gui.js;
+
+(2019-10) neue version ok, nur Info-Texte updaten!
+
+Filter out some components for smartphones using passed media query:
+README_mediaQuery2js
+
+Hi Carl,
+
+at the moment, this is not programmed to be within user interaction but it is a good idea for the next version. In the meantime, I did a hack to reproduce the HOT dynamics, including less-than optimal lane usage, by changing some constants in the js/onramp.js and js/onramp_gui.js files and creating a temporary scenario "onrampHOT" (4-lane mainroad+onramp) which can be simulated at http://www.traffic-simulation.de/onrampHOT.html (you can also download the corresponding *HOT* html and js files from my github site and fiddle with the constants, including the number of lanes, which are marked by comments containing HOT).
+
+The main thing I did in the quick hack is to reverted the trucks to car dimensions and driving behaviour and to set a strong bias to the right such that the "trucks" which are now the non-HOT vehicles, nearly exclusively use the two right lanes. By using the "truck percentage" slider, which has now the meaning of a "non-HOV percentage" slider, you can change the fraction of these vehicles. For percentages below about 50-60%, no breakdown occurs but it occurs nearly always if the  non-HOT percentages exceeds 70-80%. Then, you can also  clearly see the inadequate lane usage.
+
+
+I hope this helps,
+
+Martin
+> "Carl Henderson (SD)" <carl.henderson@silvertipdesign.com> hat am 16. Mai 2017 um 17:32 geschrieben:
+>
+> Martin,
+>  
+> Thank you for replying and sorry if I misplaced you.
+>  
+> Yes,  Walter is interested in the relative throughput (people) with the introduction of High-Occupancy lanes.  These lanes are often empty while the other lanes are stood still in traffic.  I see his point.
+>  
+> You use the term efficiency to represent the useful capacity of the road and hence to increase the maximum acceleration parameter (a) traffic becomes more stable and the effective throughput improves.
+>  
+> Could we give a percentage of cars left or right bias in the lane change parameters so that a proportion remain in the "HOT" lane while the others are crammed into the remaining lanes?  We can assume that those in the HOT lanes have two or more and those in the other lanes only have one and count them.
+>  
+> ~Carl
+>
+>      
