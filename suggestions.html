@@ -1,0 +1,40 @@
+<!-- FILEPATH: /c:/Users/bisho/OneDrive/Desktop/HTML/CSE 170 High Fidelity/suggestions.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="moreinfo.html">More Info</a></li>
+            <li><a href="traffic-simulation-de-master\traffic-simulation-de-master\index.html">Traffic Sim</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="suggestions.html">Suggestions</a></li>
+          </ul>
+    </nav>
+    <div class = "contact_form">
+        <div class="row">
+            <h1 class="col s6 push-s1">Contact Us</h1>
+        </div>
+        <div class="row">
+        <p class="col s6 push-s1">Please use the form below to suggest ideas for a pedestrian crossing:</p>
+        </div>
+        <div class="row">
+            <form action="submit-form.php" method="post" class="col s6 push-s1">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="10" cols="30" required style="background-color:rgb(250, 124, 124);"></textarea><br><br>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
